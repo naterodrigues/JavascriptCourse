@@ -176,4 +176,82 @@ console.log(whatDoYouDo('teacher','John'));
 console.log(whatDoYouDo('designer','Jane'));
 console.log(whatDoYouDo('retired','Mark'));
 
+// ARRAYS
+
+console.log('Array Section');
+
+var names = ['Nate','Mary','John'];
+var years = new Array('1994','1969','1948');
+
+
+
+var john = ['John','Smith',1990,'designer',false]; // Storing multiple data types within arrays
+
+// Applying functions to arrays (methods) to arrays. 
+
+john.push('blue'); // Adds this to the end of the array
+john.unshift('Mr'); // Adds this to the beginning of the array
+
+console.log(john);
+
+john.pop(); // Removes an array item from the end
+john.shift(); // Removes the first element from an array
+console.log(john);
+
+console.log(john.indexOf(1990)); // Finds the index position that the 1990 sits in the array
+console.log(john.indexOf(23)); // If it doesn't exit it will return -1. Useful for testing if value is not in the array. 
+
+var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
+console.log (isDesigner);
+
+/*****************************
+* CODING CHALLENGE 3
+*/
+
+/*
+John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
+
+To tip the waiter a fair amount, John created a simple tip calculator (as a function). He likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+
+In the end, John would like to have 2 arrays:
+1) Containing all three tips (one for each bill)
+2) Containing all three final paid amounts (bill + tip).
+
+(NOTE: To calculate 20% of a value, simply multiply it with 20/100 = 0.2)
+
+GOOD LUCK 😀
+*/
+
+var billsBeforeTips = [124,48,268];
+var billTips = [];
+var billsAfterTip = [];
+
+function tipCalculator(billValue) {
+    billValue < 50 ? billTips.push(billValue * 0.2) : 
+    billValue < 200 && billValue >= 50 ? billTips.push(billValue * 0.15):
+    billTips.push(billValue * 0.10);
+}
+
+console.log(billTips);
+
+tipCalculator(billsBeforeTips[0]);
+tipCalculator(billsBeforeTips[1]);
+tipCalculator(billsBeforeTips[2]);
+
+console.log(billTips);
+
+billsAfterTip.push(billsBeforeTips[0]+billTips[0]);
+billsAfterTip.push(billsBeforeTips[1]+billTips[1]);
+billsAfterTip.push(billsBeforeTips[2]+billTips[2]);
+
+console.log(billsBeforeTips);
+console.log(billsAfterTip);
+
+
+
+
+
+
+
+
 
