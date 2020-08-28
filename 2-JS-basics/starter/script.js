@@ -226,7 +226,7 @@ var billsBeforeTips = [124,48,268];
 var billTips = [];
 var billsAfterTip = [];
 
-function tipCalculator(billValue) {
+function tipCalculator(billValue) {  // Calculates the tip amount and assings to the empty tip array
     billValue < 50 ? billTips.push(billValue * 0.2) : 
     billValue < 200 && billValue >= 50 ? billTips.push(billValue * 0.15):
     billTips.push(billValue * 0.10);
@@ -246,6 +246,8 @@ billsAfterTip.push(billsBeforeTips[2]+billTips[2]);
 
 console.log(billsBeforeTips);
 console.log(billsAfterTip);
+
+console.log('Test Git Pull');
 
 
 
